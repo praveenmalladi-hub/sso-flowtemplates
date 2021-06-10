@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_app_template">
+    <sys_app_template action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <create_app>false</create_app>
+        <flow display_value="Object Template - Create an SSO User from the Service Catalog">88043ad2c320301054ffca568640dd50</flow>
+        <name>Create an SSO User from the Service Catalog</name>
+        <sys_class_name>sys_app_template</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 08:56:04</sys_created_on>
+        <sys_id>82d3b6d2c320301054ffca568640dd66</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Create an SSO User from the Service Catalog</sys_name>
+        <sys_package display_value="Flow Templates for Application Access" source="sn_ft_app_access">e383fe12c320301054ffca568640dd5d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name>sys_app_template_82d3b6d2c320301054ffca568640dd66</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-10 10:28:34</sys_updated_on>
+        <type display_value="Stand-Alone">8e4f08a05b03101083f30f216581c700</type>
+        <ux_framework_component display_value="sn-create-sso-user-from-service-catalog-wizard">ae8a36d6c320301054ffca568640dd7d</ux_framework_component>
+    </sys_app_template>
+    <sys_translated_text action="delete_multiple" query="documentkey=82d3b6d2c320301054ffca568640dd66"/>
+</record_update>

@@ -1,0 +1,2455 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>false</active>
+        <annotation/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <compiler_build/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <internal_name>create_an_okta_user_from_the_service_catalog</internal_name>
+        <label_cache>[{"name":"flow_variable.primary_email","label":"Flow Variables➛Primary email","type":"string","base_type":"string","attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"d052871f-108e-4ddd-9eb9-409ae60a75c3"}},{"name":"flow_variable.user_id","label":"Flow Variables➛User ID","type":"string","base_type":"string","attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"10370d39-a829-4046-98c6-b6768dc1f87f"}},{"name":"flow_variable.last_name","label":"Flow Variables➛Last name","type":"string","base_type":"string","attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"64fd2f64-51a6-4ce1-bbd9-e138ba811895"}},{"name":"flow_variable.first_name","label":"Flow Variables➛First name","type":"string","base_type":"string","attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"95edf5a6-6faf-4459-a326-5514344909f1"}},{"name":"flow_variable.activate_user","label":"Flow Variables➛Activate user","reference":"","reference_display":"","type":"boolean","base_type":"boolean","column_name":"","attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"5ff6d72d-5b0e-405d-84f7-18a06c68acd3"}},{"name":"521a4ae5-5f32-4639-884e-cfa6e6e5b881.table_name","label":"3➛Requested Item Table","reference":"sc_req_item","reference_display":"Requested Item Table","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"521a4ae5-5f32-4639-884e-cfa6e6e5b881.record","label":"3➛Requested Item Record","reference":"sc_req_item","reference_display":"Requested Item Record","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"Service Catalog_1.request_item.requested_for.manager","label":"Trigger➛Requested Item Record➛Requested for➛Manager","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"sys_user","column_name":"manager"},{"name":"Service Catalog_1.request_item.assignment_group.manager","label":"Trigger➛Requested Item Record➛Assignment group➛Manager","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"sys_user_group","column_name":"manager"},{"name":"Service Catalog_1.request_item","label":"Trigger➛Requested Item Record","reference":"sc_req_item","reference_display":"Requested Item","type":"reference","base_type":"reference","attributes":{"default_search_field":"number"}},{"name":"4f7c0777-e0b2-4518-94e3-01bff34881ad.id","label":"4➛Okta User ID","reference_display":"Okta User ID","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"2b87e53d-9c38-470b-8f1e-e313f8d821c2"}},{"name":"4f7c0777-e0b2-4518-94e3-01bff34881ad.user_status","label":"4➛User Status","reference_display":"User Status","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"916e6d72-678c-4437-b19b-f4e9f4e6f6af"}},{"name":"4f7c0777-e0b2-4518-94e3-01bff34881ad.status","label":"4➛Status","reference_display":"Status","type":"choice","base_type":"choice","attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"0a6ec906-ee50-44a0-8729-aed612098690"}},{"name":"4f7c0777-e0b2-4518-94e3-01bff34881ad.error_message","label":"4➛Error Message","reference_display":"Error Message","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"366bb090-666d-44cc-ad5d-6bc428083f4b"}},{"name":"2dde4d25-a15d-4f0a-a79a-5eb79ddbff1d.record","label":"6➛Requested Item Record","reference":"sc_req_item","reference_display":"Requested Item Record","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"2dde4d25-a15d-4f0a-a79a-5eb79ddbff1d.table_name","label":"6➛Requested Item Table","reference":"sc_req_item","reference_display":"Requested Item Table","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"22e36d39-77b6-4c57-a4d7-26fb93aa6107.approval_state","label":"8➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"flow_variable.approver","label":"Flow Variables➛Approver","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"6f7e4124-f698-4daf-b1a9-284b52a90e3d"}},{"name":"4d5f62dc-a2b2-4ca7-ae94-a2b5df3d7659.state","label":"9➛State","reference_display":"State","type":"choice","base_type":"choice","attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"2e334039-7a20-4ead-9148-909988f1a7e4"}},{"name":"fe91d590-2301-46cf-a3a8-ec7798e4f461.Catalog Task","label":"11➛Catalog Task","reference":"sc_task","reference_display":"Catalog Task","type":"document_id","base_type":"document_id","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"aaa4be94-d63a-44f5-bd54-80ebec212388.id","label":"12➛Okta User ID","reference_display":"Okta User ID","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"d96e136b-60b5-4e06-9ecc-f059d676cdd8"}},{"name":"aaa4be94-d63a-44f5-bd54-80ebec212388.user_status","label":"12➛User Status","reference_display":"User Status","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"c8a21d29-38de-4dfc-a9cd-e5b7ff1f154f"}},{"name":"aaa4be94-d63a-44f5-bd54-80ebec212388.status","label":"12➛Status","reference_display":"Status","type":"choice","base_type":"choice","attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"ca514c2b-f332-435b-89fb-b52c835bad2a"}},{"name":"aaa4be94-d63a-44f5-bd54-80ebec212388.error_message","label":"12➛Error Message","reference_display":"Error Message","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"e6961478-4060-4ee5-8700-4d1c13b46d81"}},{"name":"7f8a9ea1-9908-47e3-b95a-8c6318d9e5ba.record","label":"14➛Catalog Task Record","reference":"sc_task","reference_display":"Catalog Task Record","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"7f8a9ea1-9908-47e3-b95a-8c6318d9e5ba.table_name","label":"14➛Catalog Task Table","reference":"sc_task","reference_display":"Catalog Task Table","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"flow_variable.assign_to_person_if_automation_fails","label":"Flow Variables➛Assign to person if automation fails","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"91595119-132f-4db8-8f0a-677b4caee855"}},{"name":"flow_variable.assign_to_group_if_automation_fails","label":"Flow Variables➛Assign to group if automation fails","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference","attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"4e980926-8c26-4e34-a7cb-d133388fb5fd"}},{"name":"b01815c8-5b3f-4b09-82ad-b49d1f9dcd42.state","label":"15➛State","reference_display":"State","type":"choice","base_type":"choice","attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"2e334039-7a20-4ead-9148-909988f1a7e4"}},{"name":"7f32d480-3657-448d-b805-24acdea2b2bb.record","label":"16➛Requested Item Record","reference":"sc_req_item","reference_display":"Requested Item Record","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"7f32d480-3657-448d-b805-24acdea2b2bb.table_name","label":"16➛Requested Item Table","reference":"sc_req_item","reference_display":"Requested Item Table","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"61837477-7d07-4ff8-95c7-30a981873566.record","label":"18➛Catalog Task Record","reference":"sc_task","reference_display":"Catalog Task Record","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"61837477-7d07-4ff8-95c7-30a981873566.table_name","label":"18➛Catalog Task Table","reference":"sc_task","reference_display":"Catalog Task Table","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"d2f80192-8739-46de-a957-8f455ad2c204.record","label":"19➛Requested Item Record","reference":"sc_req_item","reference_display":"Requested Item Record","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"d2f80192-8739-46de-a957-8f455ad2c204.table_name","label":"19➛Requested Item Table","reference":"sc_req_item","reference_display":"Requested Item Table","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"7db00318-3624-4d88-89d4-c36f0372fe8a.record","label":"21➛Requested Item Record","reference":"sc_req_item","reference_display":"Requested Item Record","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"7db00318-3624-4d88-89d4-c36f0372fe8a.table_name","label":"21➛Requested Item Table","reference":"sc_req_item","reference_display":"Requested Item Table","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}}]</label_cache>
+        <latest_snapshot/>
+        <master_snapshot/>
+        <name>Create an Okta User from the Service Catalog</name>
+        <natlang/>
+        <outputs/>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>draft</status>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 09:57:41</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>a612079ac320301054ffca568640ddca</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Create an Okta User from the Service Catalog</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Flow Templates for Application Access" source="sn_ft_app_access">e383fe12c320301054ffca568640dd5d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name>sys_hub_flow_a612079ac320301054ffca568640ddca</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:37:14</sys_updated_on>
+        <type>flow</type>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=a612079ac320301054ffca568640ddca"/>
+    <sys_variable_value action="delete_multiple" query="document_key=a612079ac320301054ffca568640ddca"/>
+    <sys_hub_trigger_instance action="delete_multiple" query="flow=a612079ac320301054ffca568640ddca^sys_idNOT IN53ad8316c3e0301054ffca568640ddc9"/>
+    <sys_hub_trigger_instance action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Create an Okta User from the Service Catalog">a612079ac320301054ffca568640ddca</flow>
+        <name>Service Catalog</name>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 10:48:15</sys_created_on>
+        <sys_id>53ad8316c3e0301054ffca568640ddc9</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:37:13</sys_updated_on>
+        <trigger_definition display_value="Service Catalog">c43a1011c36813002841b63b12d3ae15</trigger_definition>
+        <trigger_inputs/>
+        <trigger_outputs/>
+        <trigger_type>service_catalog</trigger_type>
+    </sys_hub_trigger_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=53ad8316c3e0301054ffca568640ddc9"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=a612079ac320301054ffca568640ddca^sys_idNOT INee124f9ac320301054ffca568640ddbd"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>a612079ac320301054ffca568640ddca</id>
+        <name>Create an Okta User from the Service Catalog</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 09:57:41</sys_created_on>
+        <sys_id>ee124f9ac320301054ffca568640ddbd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 09:57:41</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_hub_flow_input action="delete_multiple" query="model=a612079ac320301054ffca568640ddca^sys_idNOT IN47ad8316c3e0301054ffca568640ddb7,d7ad8316c3e0301054ffca568640ddbe"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>default_search_field=number,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>request_item</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Request Item</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Create an Okta User from the Service Catalog">a612079ac320301054ffca568640ddca</model>
+        <model_id>a612079ac320301054ffca568640ddca</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_a612079ac320301054ffca568640ddca</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="sc_req_item">sc_req_item</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 10:48:15</sys_created_on>
+        <sys_id>47ad8316c3e0301054ffca568640ddb7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 10:48:15</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name,uiTypeLabel=Table Name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value>sc_req_item</default_value>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Create an Okta User from the Service Catalog">a612079ac320301054ffca568640ddca</model>
+        <model_id>a612079ac320301054ffca568640ddca</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_a612079ac320301054ffca568640ddca</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 10:48:15</sys_created_on>
+        <sys_id>d7ad8316c3e0301054ffca568640ddbe</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 10:48:15</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_instance action="delete_multiple" query="flow=a612079ac320301054ffca568640ddca^sys_idNOT IN131313d6c3e0301054ffca568640dd2c,131313d6c3e0301054ffca568640dd36,1f1313d6c3e0301054ffca568640dd3e,27adc316c3e0301054ffca568640dd0b,531313d6c3e0301054ffca568640dd4b,571313d6c3e0301054ffca568640dd6d,631313d6c3e0301054ffca568640dd8c,67adc316c3e0301054ffca568640dd1b,6f1313d6c3e0301054ffca568640dd83,931313d6c3e0301054ffca568640dd22,af1313d6c3e0301054ffca568640dd7d,af1313d6c3e0301054ffca568640dd99,d31313d6c3e0301054ffca568640dd77,e71313d6c3e0301054ffca568640dd91"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent/>
+        <comment>Add work note, close request.</comment>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Create an Okta User from the Service Catalog">a612079ac320301054ffca568640ddca</flow>
+        <order>6</order>
+        <parent_ui_id>e93738bc-4e5b-4cdd-82b9-d9de6c9fce9b</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:00</sys_created_on>
+        <sys_id>131313d6c3e0301054ffca568640dd2c</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:37:13</sys_updated_on>
+        <ui_id>2dde4d25-a15d-4f0a-a79a-5eb79ddbff1d</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=131313d6c3e0301054ffca568640dd2c"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>131313d6c3e0301054ffca568640dd2c</document_key>
+        <order>50</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>131313d6c3e0301054ffca568640dd2e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <value>sc_req_item</value>
+        <variable display_value="Table">b5d01916c31332002841b63b12d3aec9</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>131313d6c3e0301054ffca568640dd2c</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>5f1313d6c3e0301054ffca568640dd2d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <value>work_notes=An Okta User with this Login ID already exists. If you still want to create a new user in Okta, please submit a catalog request with a different Login ID.^state=4</value>
+        <variable display_value="Fields">02d01916c31332002841b63b12d3aeee</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=131313d6c3e0301054ffca568640dd2c"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>131313d6c3e0301054ffca568640dd2c</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>1b1313d6c3e0301054ffca568640dd2d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>{{Service Catalog_1.request_item}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>131313d6c3e0301054ffca568640dd2c</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>571313d6c3e0301054ffca568640dd2d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>values</field>
+        <id>131313d6c3e0301054ffca568640dd2c</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>db1313d6c3e0301054ffca568640dd2d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Ask For Approval">f8f2e9920b10030085c083eb37673abd</action_type>
+        <action_type_parent/>
+        <comment>Send to approver defined in the Flow Variables.</comment>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Create an Okta User from the Service Catalog">a612079ac320301054ffca568640ddca</flow>
+        <order>8</order>
+        <parent_ui_id>f6f230f1-e07a-4943-8a77-74b7e07c203e</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>131313d6c3e0301054ffca568640dd36</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:37:13</sys_updated_on>
+        <ui_id>22e36d39-77b6-4c57-a4d7-26fb93aa6107</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=131313d6c3e0301054ffca568640dd36"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>131313d6c3e0301054ffca568640dd36</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>1b1313d6c3e0301054ffca568640dd39</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <value>sc_req_item</value>
+        <variable display_value="Table">bcf2e9920b10030085c083eb37673acc</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>131313d6c3e0301054ffca568640dd36</document_key>
+        <order>5</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>571313d6c3e0301054ffca568640dd39</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <value/>
+        <variable display_value="Due Date">c5f2e9920b10030085c083eb37673af9</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>131313d6c3e0301054ffca568640dd36</document_key>
+        <order>3</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>931313d6c3e0301054ffca568640dd39</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <value>approval_history</value>
+        <variable display_value="Journal Field">c1f2e9920b10030085c083eb37673ae3</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>131313d6c3e0301054ffca568640dd36</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>df1313d6c3e0301054ffca568640dd38</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <value>approval</value>
+        <variable display_value="Approval Field">01f2e9920b10030085c083eb37673ad8</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=131313d6c3e0301054ffca568640dd36"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>approval_conditions</field>
+        <id>131313d6c3e0301054ffca568640dd36</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>9b1313d6c3e0301054ffca568640dd38</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f8f2e9920b10030085c083eb37673abd</table>
+        <value>ApprovesAnyU[{{flow_variable.approver}}]OrRejectsAnyU[{{flow_variable.approver}}]</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>approval_field</field>
+        <id>131313d6c3e0301054ffca568640dd36</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>9f1313d6c3e0301054ffca568640dd37</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f8f2e9920b10030085c083eb37673abd</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>due_date</field>
+        <id>131313d6c3e0301054ffca568640dd36</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>d71313d6c3e0301054ffca568640dd38</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f8f2e9920b10030085c083eb37673abd</table>
+        <value>{"action":"none","date_type":"actual","date":"{{}}","duration":1,"duration_type":"days","schedule":"","schedule_label":""}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>journal_field</field>
+        <id>131313d6c3e0301054ffca568640dd36</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>531313d6c3e0301054ffca568640dd38</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f8f2e9920b10030085c083eb37673abd</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>131313d6c3e0301054ffca568640dd36</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>171313d6c3e0301054ffca568640dd38</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f8f2e9920b10030085c083eb37673abd</table>
+        <value>{{Service Catalog_1.request_item}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table</field>
+        <id>131313d6c3e0301054ffca568640dd36</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>5f1313d6c3e0301054ffca568640dd38</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f8f2e9920b10030085c083eb37673abd</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Wait For Condition">89ce8a4187120010663ca1bb36cb0be3</action_type>
+        <action_type_parent/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Create an Okta User from the Service Catalog">a612079ac320301054ffca568640ddca</flow>
+        <order>9</order>
+        <parent_ui_id>f6f230f1-e07a-4943-8a77-74b7e07c203e</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>1f1313d6c3e0301054ffca568640dd3e</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:37:13</sys_updated_on>
+        <ui_id>4d5f62dc-a2b2-4ca7-ae94-a2b5df3d7659</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=1f1313d6c3e0301054ffca568640dd3e"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>1f1313d6c3e0301054ffca568640dd3e</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>571313d6c3e0301054ffca568640dd41</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <value>sc_req_item</value>
+        <variable display_value="Table">45ce8a4187120010663ca1bb36cb0bea</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>1f1313d6c3e0301054ffca568640dd3e</document_key>
+        <order>3</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>931313d6c3e0301054ffca568640dd41</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <value>approval=approved^ORapproval=rejected</value>
+        <variable display_value="Conditions">49ce8a4187120010663ca1bb36cb0bef</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=1f1313d6c3e0301054ffca568640dd3e"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>conditions</field>
+        <id>1f1313d6c3e0301054ffca568640dd3e</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>5f1313d6c3e0301054ffca568640dd40</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_89ce8a4187120010663ca1bb36cb0be3</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>1f1313d6c3e0301054ffca568640dd3e</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>9b1313d6c3e0301054ffca568640dd40</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_89ce8a4187120010663ca1bb36cb0be3</table>
+        <value>{{Service Catalog_1.request_item}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>1f1313d6c3e0301054ffca568640dd3e</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>131313d6c3e0301054ffca568640dd41</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_89ce8a4187120010663ca1bb36cb0be3</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Get Catalog Variables">330ba3abc31013002841b63b12d3aee8</action_type>
+        <action_type_parent/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Create an Okta User from the Service Catalog">a612079ac320301054ffca568640ddca</flow>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 10:48:16</sys_created_on>
+        <sys_id>27adc316c3e0301054ffca568640dd0b</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:37:13</sys_updated_on>
+        <ui_id>821e8f83-3321-4a5e-be46-04ef305590bb</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=27adc316c3e0301054ffca568640dd0b"/>
+    <sys_element_mapping action="delete_multiple" query="id=27adc316c3e0301054ffca568640dd0b"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>requested_item</field>
+        <id>27adc316c3e0301054ffca568640dd0b</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 10:48:16</sys_created_on>
+        <sys_id>2badc316c3e0301054ffca568640dd0d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 10:48:16</sys_updated_on>
+        <table>var__m_sys_hub_action_input_330ba3abc31013002841b63b12d3aee8</table>
+        <value>{{Service Catalog_1.request_item}}</value>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Create Catalog Task">af51fd0e73141300612c273ffff6a785</action_type>
+        <action_type_parent/>
+        <comment>Create Task for the Okta action.</comment>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Create an Okta User from the Service Catalog">a612079ac320301054ffca568640ddca</flow>
+        <order>11</order>
+        <parent_ui_id>a8602df7-d54b-473c-aa13-5826522f2adc</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>531313d6c3e0301054ffca568640dd4b</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:37:13</sys_updated_on>
+        <ui_id>fe91d590-2301-46cf-a3a8-ec7798e4f461</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=531313d6c3e0301054ffca568640dd4b"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>531313d6c3e0301054ffca568640dd4b</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>1f1313d6c3e0301054ffca568640dd4d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <value>Create user in Okta</value>
+        <variable display_value="Short Description">3751fd0e73141300612c273ffff6a7a6</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>531313d6c3e0301054ffca568640dd4b</document_key>
+        <order>3</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>931313d6c3e0301054ffca568640dd4e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <value>state=2</value>
+        <variable display_value="Fields">7751fd0e73141300612c273ffff6a7ac</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>531313d6c3e0301054ffca568640dd4b</document_key>
+        <order>4</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>df1313d6c3e0301054ffca568640dd4d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <value>0</value>
+        <variable display_value="Wait">f751fd0e73141300612c273ffff6a7b2</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=531313d6c3e0301054ffca568640dd4b"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_fields</field>
+        <id>531313d6c3e0301054ffca568640dd4b</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>9b1313d6c3e0301054ffca568640dd4d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_af51fd0e73141300612c273ffff6a785</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_requested_item</field>
+        <id>531313d6c3e0301054ffca568640dd4b</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>171313d6c3e0301054ffca568640dd4d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_af51fd0e73141300612c273ffff6a785</table>
+        <value>{{Service Catalog_1.request_item}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_short_description</field>
+        <id>531313d6c3e0301054ffca568640dd4b</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>531313d6c3e0301054ffca568640dd4d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_af51fd0e73141300612c273ffff6a785</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_wait</field>
+        <id>531313d6c3e0301054ffca568640dd4b</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>d71313d6c3e0301054ffca568640dd4d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_af51fd0e73141300612c273ffff6a785</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Create User">012a310f53e26010ca94ddeeff7b12ba</action_type>
+        <action_type_parent/>
+        <comment>Maps flow variables to fields. If you want to populate more fields with the catalog request, you can map the catalog variables here.</comment>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Create an Okta User from the Service Catalog">a612079ac320301054ffca568640ddca</flow>
+        <order>12</order>
+        <parent_ui_id>a8602df7-d54b-473c-aa13-5826522f2adc</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>571313d6c3e0301054ffca568640dd6d</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:37:13</sys_updated_on>
+        <ui_id>aaa4be94-d63a-44f5-bd54-80ebec212388</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=571313d6c3e0301054ffca568640dd6d"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>571313d6c3e0301054ffca568640dd6d</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:13:36</sys_created_on>
+        <sys_id>6e7357d6c3e0301054ffca568640dd4d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:13:36</sys_updated_on>
+        <value>0</value>
+        <variable display_value="Activate User">852a310f53e26010ca94ddeeff7b12bf</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>571313d6c3e0301054ffca568640dd6d</document_key>
+        <order>6</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>d71313d6c3e0301054ffca568640dd6f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <value>{"complexObject":{"name$":"FD3be3029a26366010f7051dc296880b82","$COCollectionField":[{"Value":{"$cv":{"$c":"java.lang.String","$v":""}},"Name":{"$cv":{"$c":"java.lang.String","$v":""}}}]},"complexObjectSchema":{"FlowDesigner:FD3be3029a26366010f7051dc296880b82":{"$COCollectionField":[{"Additional_Attribute":{"Value":"String","Value.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Value\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\"}"},"Name":"String","Name.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Name\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\"}"}}}],"$COCollectionField.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Additional Attributes\",\"mandatory\":\"false\",\"child_name\":\"Additional_Attribute\",\"uiUniqueId\":\"a57b5842-34d9-409a-8470-7dff727feb19\",\"uiTypeLabel\":\"Array.Object\",\"co_type_name\":\"FD3be3029a26366010f7051dc296880b82\",\"child_label\":\"Additional Attribute\",\"child_type_label\":\"Object\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"array.object\",\"child_type\":\"object\",\"order\":\"6\",\"max_length\":\"65000\",\"child_uiUniqueId\":\"05c9de99-413c-4b60-aba0-6ff682f2c716\"}"},"$COCollectionField.$field_facets":{"SimpleMapFacet":"{\"up-shift-collection-level\":\"true\"}"}},"FlowDesigner:FD3be3029a26366010f7051dc296880b82.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Additional Attributes\",\"mandatory\":\"false\",\"child_name\":\"Additional_Attribute\",\"uiUniqueId\":\"a57b5842-34d9-409a-8470-7dff727feb19\",\"uiTypeLabel\":\"Array.Object\",\"co_type_name\":\"FD3be3029a26366010f7051dc296880b82\",\"child_label\":\"Additional Attribute\",\"child_type_label\":\"Object\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"array.object\",\"child_type\":\"object\",\"order\":\"6\",\"max_length\":\"65000\",\"child_uiUniqueId\":\"05c9de99-413c-4b60-aba0-6ff682f2c716\"}"}},"serializationFormat":"JSON","version":"1.0"}</value>
+        <variable display_value="Additional Attributes">452a310f53e26010ca94ddeeff7b12f0</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=571313d6c3e0301054ffca568640dd6d"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>additional_attributes</field>
+        <id>571313d6c3e0301054ffca568640dd6d</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>571313d6c3e0301054ffca568640dd6f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_012a310f53e26010ca94ddeeff7b12ba</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>first_name_firstname_</field>
+        <id>571313d6c3e0301054ffca568640dd6d</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:13:36</sys_created_on>
+        <sys_id>ee7357d6c3e0301054ffca568640dd4c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:13:36</sys_updated_on>
+        <table>var__m_sys_hub_action_input_012a310f53e26010ca94ddeeff7b12ba</table>
+        <value>{{flow_variable.first_name}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>last_name_lastname_</field>
+        <id>571313d6c3e0301054ffca568640dd6d</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:13:36</sys_created_on>
+        <sys_id>2a7357d6c3e0301054ffca568640dd4d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:13:36</sys_updated_on>
+        <table>var__m_sys_hub_action_input_012a310f53e26010ca94ddeeff7b12ba</table>
+        <value>{{flow_variable.last_name}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>login_login_</field>
+        <id>571313d6c3e0301054ffca568640dd6d</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:13:36</sys_created_on>
+        <sys_id>ea7357d6c3e0301054ffca568640dd4d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:13:36</sys_updated_on>
+        <table>var__m_sys_hub_action_input_012a310f53e26010ca94ddeeff7b12ba</table>
+        <value>{{flow_variable.user_id}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>primary_email_email_</field>
+        <id>571313d6c3e0301054ffca568640dd6d</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:13:36</sys_created_on>
+        <sys_id>667357d6c3e0301054ffca568640dd4d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:13:36</sys_updated_on>
+        <table>var__m_sys_hub_action_input_012a310f53e26010ca94ddeeff7b12ba</table>
+        <value>{{flow_variable.primary_email}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>send_activation_email</field>
+        <id>571313d6c3e0301054ffca568640dd6d</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:13:36</sys_created_on>
+        <sys_id>a27357d6c3e0301054ffca568640dd4d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:13:36</sys_updated_on>
+        <table>var__m_sys_hub_action_input_012a310f53e26010ca94ddeeff7b12ba</table>
+        <value>{{flow_variable.activate_user}}</value>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent/>
+        <comment>Close Catalog Task.</comment>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Create an Okta User from the Service Catalog">a612079ac320301054ffca568640ddca</flow>
+        <order>18</order>
+        <parent_ui_id>6e0b4717-d19a-42d7-9caf-89a2121034d7</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>631313d6c3e0301054ffca568640dd8c</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:37:14</sys_updated_on>
+        <ui_id>61837477-7d07-4ff8-95c7-30a981873566</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=631313d6c3e0301054ffca568640dd8c"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>631313d6c3e0301054ffca568640dd8c</document_key>
+        <order>50</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>ab1313d6c3e0301054ffca568640dd8d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <value>sc_task</value>
+        <variable display_value="Table">b5d01916c31332002841b63b12d3aec9</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=631313d6c3e0301054ffca568640dd8c"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>631313d6c3e0301054ffca568640dd8c</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>671313d6c3e0301054ffca568640dd8d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>{{fe91d590-2301-46cf-a3a8-ec7798e4f461.Catalog Task}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>631313d6c3e0301054ffca568640dd8c</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>a31313d6c3e0301054ffca568640dd8d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>values</field>
+        <id>631313d6c3e0301054ffca568640dd8c</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>2b1313d6c3e0301054ffca568640dd8d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>state=3^work_notes=Okta user created successfully. Okta User ID: {{aaa4be94-d63a-44f5-bd54-80ebec212388.id}}</value>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Create an Okta User from the Service Catalog">a612079ac320301054ffca568640ddca</flow>
+        <order>3</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 10:48:16</sys_created_on>
+        <sys_id>67adc316c3e0301054ffca568640dd1b</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:37:13</sys_updated_on>
+        <ui_id>521a4ae5-5f32-4639-884e-cfa6e6e5b881</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=67adc316c3e0301054ffca568640dd1b"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>67adc316c3e0301054ffca568640dd1b</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 10:48:17</sys_created_on>
+        <sys_id>67adc316c3e0301054ffca568640dd1d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 10:48:17</sys_updated_on>
+        <value>state=2</value>
+        <variable display_value="Fields">02d01916c31332002841b63b12d3aeee</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>67adc316c3e0301054ffca568640dd1b</document_key>
+        <order>50</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 10:48:17</sys_created_on>
+        <sys_id>afadc316c3e0301054ffca568640dd1d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 10:48:17</sys_updated_on>
+        <value>sc_req_item</value>
+        <variable display_value="Table">b5d01916c31332002841b63b12d3aec9</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=67adc316c3e0301054ffca568640dd1b"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>67adc316c3e0301054ffca568640dd1b</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 10:48:17</sys_created_on>
+        <sys_id>23adc316c3e0301054ffca568640dd1d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 10:48:17</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>{{Service Catalog_1.request_item}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>67adc316c3e0301054ffca568640dd1b</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 10:48:17</sys_created_on>
+        <sys_id>6fadc316c3e0301054ffca568640dd1c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 10:48:17</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>values</field>
+        <id>67adc316c3e0301054ffca568640dd1b</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 10:48:17</sys_created_on>
+        <sys_id>e3adc316c3e0301054ffca568640dd1d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 10:48:17</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent/>
+        <comment>Close Requested Item when Task is complete.</comment>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Create an Okta User from the Service Catalog">a612079ac320301054ffca568640ddca</flow>
+        <order>16</order>
+        <parent_ui_id>3b67e748-c71a-400c-8b2a-e4888e420800</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>6f1313d6c3e0301054ffca568640dd83</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:37:14</sys_updated_on>
+        <ui_id>7f32d480-3657-448d-b805-24acdea2b2bb</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=6f1313d6c3e0301054ffca568640dd83"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>6f1313d6c3e0301054ffca568640dd83</document_key>
+        <order>50</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>a71313d6c3e0301054ffca568640dd85</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <value>sc_req_item</value>
+        <variable display_value="Table">b5d01916c31332002841b63b12d3aec9</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=6f1313d6c3e0301054ffca568640dd83"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>6f1313d6c3e0301054ffca568640dd83</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>631313d6c3e0301054ffca568640dd85</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>{{Service Catalog_1.request_item}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>6f1313d6c3e0301054ffca568640dd83</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>af1313d6c3e0301054ffca568640dd84</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>values</field>
+        <id>6f1313d6c3e0301054ffca568640dd83</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>271313d6c3e0301054ffca568640dd85</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>state={{b01815c8-5b3f-4b09-82ad-b49d1f9dcd42.state}}</value>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Look up Okta User ID">9e26e4d513be530056193192e144b01d</action_type>
+        <action_type_parent/>
+        <comment>Check to see if user already exists.</comment>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Create an Okta User from the Service Catalog">a612079ac320301054ffca568640ddca</flow>
+        <order>4</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:00</sys_created_on>
+        <sys_id>931313d6c3e0301054ffca568640dd22</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:37:13</sys_updated_on>
+        <ui_id>4f7c0777-e0b2-4518-94e3-01bff34881ad</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=931313d6c3e0301054ffca568640dd22"/>
+    <sys_element_mapping action="delete_multiple" query="id=931313d6c3e0301054ffca568640dd22"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>user_id</field>
+        <id>931313d6c3e0301054ffca568640dd22</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:37:13</sys_created_on>
+        <sys_id>60e8df5ac3e0301054ffca568640dd3a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:37:13</sys_updated_on>
+        <table>var__m_sys_hub_action_input_9e26e4d513be530056193192e144b01d</table>
+        <value>{{flow_variable.user_id}}</value>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Wait For Condition">89ce8a4187120010663ca1bb36cb0be3</action_type>
+        <action_type_parent/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Create an Okta User from the Service Catalog">a612079ac320301054ffca568640ddca</flow>
+        <order>15</order>
+        <parent_ui_id>3b67e748-c71a-400c-8b2a-e4888e420800</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>af1313d6c3e0301054ffca568640dd7d</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:37:14</sys_updated_on>
+        <ui_id>b01815c8-5b3f-4b09-82ad-b49d1f9dcd42</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=af1313d6c3e0301054ffca568640dd7d"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>af1313d6c3e0301054ffca568640dd7d</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>231313d6c3e0301054ffca568640dd80</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <value>sc_task</value>
+        <variable display_value="Table">45ce8a4187120010663ca1bb36cb0bea</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>af1313d6c3e0301054ffca568640dd7d</document_key>
+        <order>3</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>6f1313d6c3e0301054ffca568640dd7f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <value>stateIN3,4,7</value>
+        <variable display_value="Conditions">49ce8a4187120010663ca1bb36cb0bef</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=af1313d6c3e0301054ffca568640dd7d"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>conditions</field>
+        <id>af1313d6c3e0301054ffca568640dd7d</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>2b1313d6c3e0301054ffca568640dd7f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_89ce8a4187120010663ca1bb36cb0be3</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>af1313d6c3e0301054ffca568640dd7d</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>671313d6c3e0301054ffca568640dd7f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_89ce8a4187120010663ca1bb36cb0be3</table>
+        <value>{{7f8a9ea1-9908-47e3-b95a-8c6318d9e5ba.record}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>af1313d6c3e0301054ffca568640dd7d</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>eb1313d6c3e0301054ffca568640dd7f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_89ce8a4187120010663ca1bb36cb0be3</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent/>
+        <comment>Close Requested Item.</comment>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Create an Okta User from the Service Catalog">a612079ac320301054ffca568640ddca</flow>
+        <order>21</order>
+        <parent_ui_id>bb2a22e9-d735-45e2-8990-0c6900ea57f5</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>af1313d6c3e0301054ffca568640dd99</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:37:14</sys_updated_on>
+        <ui_id>7db00318-3624-4d88-89d4-c36f0372fe8a</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=af1313d6c3e0301054ffca568640dd99"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>af1313d6c3e0301054ffca568640dd99</document_key>
+        <order>50</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>ab1313d6c3e0301054ffca568640dd9b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <value>sc_req_item</value>
+        <variable display_value="Table">b5d01916c31332002841b63b12d3aec9</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>af1313d6c3e0301054ffca568640dd99</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>e71313d6c3e0301054ffca568640dd9b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <value>state=3</value>
+        <variable display_value="Fields">02d01916c31332002841b63b12d3aeee</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=af1313d6c3e0301054ffca568640dd99"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>af1313d6c3e0301054ffca568640dd99</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>a31313d6c3e0301054ffca568640dd9b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>{{Service Catalog_1.request_item}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>af1313d6c3e0301054ffca568640dd99</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>ef1313d6c3e0301054ffca568640dd9a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>values</field>
+        <id>af1313d6c3e0301054ffca568640dd99</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>671313d6c3e0301054ffca568640dd9b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent/>
+        <comment>If automation fails, reassign to user or group defined in Flow Variables.</comment>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Create an Okta User from the Service Catalog">a612079ac320301054ffca568640ddca</flow>
+        <order>14</order>
+        <parent_ui_id>3b67e748-c71a-400c-8b2a-e4888e420800</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>d31313d6c3e0301054ffca568640dd77</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:37:14</sys_updated_on>
+        <ui_id>7f8a9ea1-9908-47e3-b95a-8c6318d9e5ba</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=d31313d6c3e0301054ffca568640dd77"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>d31313d6c3e0301054ffca568640dd77</document_key>
+        <order>50</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>1f1313d6c3e0301054ffca568640dd78</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <value>sc_task</value>
+        <variable display_value="Table">b5d01916c31332002841b63b12d3aec9</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=d31313d6c3e0301054ffca568640dd77"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>d31313d6c3e0301054ffca568640dd77</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>d71313d6c3e0301054ffca568640dd78</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>{{fe91d590-2301-46cf-a3a8-ec7798e4f461.Catalog Task}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>d31313d6c3e0301054ffca568640dd77</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>171313d6c3e0301054ffca568640dd78</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>values</field>
+        <id>d31313d6c3e0301054ffca568640dd77</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>9b1313d6c3e0301054ffca568640dd78</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>assigned_to={{flow_variable.assign_to_person_if_automation_fails}}^assignment_group={{flow_variable.assign_to_group_if_automation_fails}}^work_notes=Okta user was unable to be created through automation. Error: {{aaa4be94-d63a-44f5-bd54-80ebec212388.error_message}}.  Please add the user manually and close this Task.</value>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent/>
+        <comment>Close Requested Item.</comment>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Create an Okta User from the Service Catalog">a612079ac320301054ffca568640ddca</flow>
+        <order>19</order>
+        <parent_ui_id>6e0b4717-d19a-42d7-9caf-89a2121034d7</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>e71313d6c3e0301054ffca568640dd91</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:37:14</sys_updated_on>
+        <ui_id>d2f80192-8739-46de-a957-8f455ad2c204</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=e71313d6c3e0301054ffca568640dd91"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>e71313d6c3e0301054ffca568640dd91</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>231313d6c3e0301054ffca568640dd93</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <value>state=3</value>
+        <variable display_value="Fields">02d01916c31332002841b63b12d3aeee</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>e71313d6c3e0301054ffca568640dd91</document_key>
+        <order>50</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>e31313d6c3e0301054ffca568640dd93</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <value>sc_req_item</value>
+        <variable display_value="Table">b5d01916c31332002841b63b12d3aec9</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=e71313d6c3e0301054ffca568640dd91"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>e71313d6c3e0301054ffca568640dd91</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>eb1313d6c3e0301054ffca568640dd92</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>{{Service Catalog_1.request_item}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>e71313d6c3e0301054ffca568640dd91</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>2b1313d6c3e0301054ffca568640dd92</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>values</field>
+        <id>e71313d6c3e0301054ffca568640dd91</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>af1313d6c3e0301054ffca568640dd92</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_flow_logic action="delete_multiple" query="flow=a612079ac320301054ffca568640ddca^sys_idNOT IN131313d6c3e0301054ffca568640dd70,5b1313d6c3e0301054ffca568640dd2e,6f1313d6c3e0301054ffca568640dd85,9f1313d6c3e0301054ffca568640dd41,ab1313d6c3e0301054ffca568640dd93,db1313d6c3e0301054ffca568640dd23,efadc316c3e0301054ffca568640dd0e"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">5f1313d6c3e0301054ffca568640dd6f</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Create an Okta User from the Service Catalog">a612079ac320301054ffca568640ddca</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>13</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>a8602df7-d54b-473c-aa13-5826522f2adc</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>131313d6c3e0301054ffca568640dd70</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:37:13</sys_updated_on>
+        <ui_id>3b67e748-c71a-400c-8b2a-e4888e420800</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=131313d6c3e0301054ffca568640dd70"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>131313d6c3e0301054ffca568640dd70</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>971313d6c3e0301054ffca568640dd73</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <value>Error creating user</value>
+        <variable display_value="Condition Label">f0af19c1c32632002841b63b12d3aea3</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=131313d6c3e0301054ffca568640dd70"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition</field>
+        <id>131313d6c3e0301054ffca568640dd70</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>171313d6c3e0301054ffca568640dd73</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value>{{aaa4be94-d63a-44f5-bd54-80ebec212388.status}}=Error</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition_name</field>
+        <id>131313d6c3e0301054ffca568640dd70</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>531313d6c3e0301054ffca568640dd73</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">971313d6c3e0301054ffca568640dd2e</block>
+        <comment/>
+        <connected_to>e93738bc-4e5b-4cdd-82b9-d9de6c9fce9b</connected_to>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Create an Okta User from the Service Catalog">a612079ac320301054ffca568640ddca</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>7</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>5b1313d6c3e0301054ffca568640dd2e</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:37:13</sys_updated_on>
+        <ui_id>f6f230f1-e07a-4943-8a77-74b7e07c203e</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=5b1313d6c3e0301054ffca568640dd2e"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">ab1313d6c3e0301054ffca568640dd85</block>
+        <comment/>
+        <connected_to>3b67e748-c71a-400c-8b2a-e4888e420800</connected_to>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Create an Okta User from the Service Catalog">a612079ac320301054ffca568640ddca</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>17</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>a8602df7-d54b-473c-aa13-5826522f2adc</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>6f1313d6c3e0301054ffca568640dd85</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:37:14</sys_updated_on>
+        <ui_id>6e0b4717-d19a-42d7-9caf-89a2121034d7</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=6f1313d6c3e0301054ffca568640dd85"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">db1313d6c3e0301054ffca568640dd41</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Create an Okta User from the Service Catalog">a612079ac320301054ffca568640ddca</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>10</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>f6f230f1-e07a-4943-8a77-74b7e07c203e</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>9f1313d6c3e0301054ffca568640dd41</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:37:13</sys_updated_on>
+        <ui_id>a8602df7-d54b-473c-aa13-5826522f2adc</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=9f1313d6c3e0301054ffca568640dd41"/>
+    <sys_element_mapping action="delete_multiple" query="id=9f1313d6c3e0301054ffca568640dd41"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition</field>
+        <id>9f1313d6c3e0301054ffca568640dd41</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>df1313d6c3e0301054ffca568640dd44</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:01</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value>{{22e36d39-77b6-4c57-a4d7-26fb93aa6107.approval_state}}=approved</value>
+    </sys_element_mapping>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">e71313d6c3e0301054ffca568640dd93</block>
+        <comment/>
+        <connected_to>a8602df7-d54b-473c-aa13-5826522f2adc</connected_to>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Create an Okta User from the Service Catalog">a612079ac320301054ffca568640ddca</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>20</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>f6f230f1-e07a-4943-8a77-74b7e07c203e</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:01</sys_created_on>
+        <sys_id>ab1313d6c3e0301054ffca568640dd93</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:37:14</sys_updated_on>
+        <ui_id>bb2a22e9-d735-45e2-8990-0c6900ea57f5</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=ab1313d6c3e0301054ffca568640dd93"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">171313d6c3e0301054ffca568640dd23</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Create an Okta User from the Service Catalog">a612079ac320301054ffca568640ddca</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>5</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:00</sys_created_on>
+        <sys_id>db1313d6c3e0301054ffca568640dd23</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:37:13</sys_updated_on>
+        <ui_id>e93738bc-4e5b-4cdd-82b9-d9de6c9fce9b</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=db1313d6c3e0301054ffca568640dd23"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>db1313d6c3e0301054ffca568640dd23</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:00</sys_created_on>
+        <sys_id>1f1313d6c3e0301054ffca568640dd27</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:00</sys_updated_on>
+        <value>User already exists</value>
+        <variable display_value="Condition Label">f0af19c1c32632002841b63b12d3aea3</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=db1313d6c3e0301054ffca568640dd23"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition</field>
+        <id>db1313d6c3e0301054ffca568640dd23</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:00</sys_created_on>
+        <sys_id>9b1313d6c3e0301054ffca568640dd27</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:00</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value>{{4f7c0777-e0b2-4518-94e3-01bff34881ad.status}}=Success</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition_name</field>
+        <id>db1313d6c3e0301054ffca568640dd23</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:12:00</sys_created_on>
+        <sys_id>d31313d6c3e0301054ffca568640dd27</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:12:00</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">e3adc316c3e0301054ffca568640dd0e</block>
+        <comment>Map Catalog Variables or enter a value for any undefined variable in this action. All variables after "Assign to" are optional.</comment>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Create an Okta User from the Service Catalog">a612079ac320301054ffca568640ddca</flow>
+        <flow_variable/>
+        <flow_variable/>
+        <flow_variables_assigned>approver,assign_to_group_if_automation_fails,activate_user,user_id,last_name,primary_email,assign_to_person_if_automation_fails,first_name</flow_variables_assigned>
+        <inputs/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 10:48:16</sys_created_on>
+        <sys_id>efadc316c3e0301054ffca568640dd0e</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:37:13</sys_updated_on>
+        <ui_id>cca042a0-8d80-4a5c-960a-da7830755e3c</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=efadc316c3e0301054ffca568640dd0e"/>
+    <sys_element_mapping action="delete_multiple" query="id=efadc316c3e0301054ffca568640dd0e"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>approver</field>
+        <id>efadc316c3e0301054ffca568640dd0e</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 10:48:16</sys_created_on>
+        <sys_id>67adc316c3e0301054ffca568640dd17</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 10:48:16</sys_updated_on>
+        <table>var__m_sys_hub_flow_variable_a612079ac320301054ffca568640ddca</table>
+        <value>{{Service Catalog_1.request_item.requested_for.manager}}</value>
+    </sys_element_mapping>
+    <sys_hub_flow_variable action="delete_multiple" query="model=a612079ac320301054ffca568640ddca^sys_idNOT IN1bad8316c3e0301054ffca568640ddeb,1bad8316c3e0301054ffca568640ddf5,27ad8316c3e0301054ffca568640ddff,57ad8316c3e0301054ffca568640dde6,97ad8316c3e0301054ffca568640ddf0,97ad8316c3e0301054ffca568640ddfa,d3ad8316c3e0301054ffca568640ddde,d7ad8316c3e0301054ffca568640ddcb"/>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=95edf5a6-6faf-4459-a326-5514344909f1</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>first_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>First name</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Create an Okta User from the Service Catalog">a612079ac320301054ffca568640ddca</model>
+        <model_id>a612079ac320301054ffca568640ddca</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_variable_a612079ac320301054ffca568640ddca</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 10:48:15</sys_created_on>
+        <sys_id>1bad8316c3e0301054ffca568640ddeb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>First name</sys_name>
+        <sys_package display_value="Flow Templates for Application Access" source="sn_ft_app_access">e383fe12c320301054ffca568640dd5d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name>sys_hub_flow_variable_1bad8316c3e0301054ffca568640ddeb</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 10:48:15</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=10370d39-a829-4046-98c6-b6768dc1f87f</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>user_id</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>User ID</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Create an Okta User from the Service Catalog">a612079ac320301054ffca568640ddca</model>
+        <model_id>a612079ac320301054ffca568640ddca</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_variable_a612079ac320301054ffca568640ddca</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 10:48:16</sys_created_on>
+        <sys_id>1bad8316c3e0301054ffca568640ddf5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>User ID</sys_name>
+        <sys_package display_value="Flow Templates for Application Access" source="sn_ft_app_access">e383fe12c320301054ffca568640dd5d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name>sys_hub_flow_variable_1bad8316c3e0301054ffca568640ddf5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 10:48:16</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=64fd2f64-51a6-4ce1-bbd9-e138ba811895</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>last_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Last name</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Create an Okta User from the Service Catalog">a612079ac320301054ffca568640ddca</model>
+        <model_id>a612079ac320301054ffca568640ddca</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_variable_a612079ac320301054ffca568640ddca</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 10:48:16</sys_created_on>
+        <sys_id>27ad8316c3e0301054ffca568640ddff</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Last name</sys_name>
+        <sys_package display_value="Flow Templates for Application Access" source="sn_ft_app_access">e383fe12c320301054ffca568640dd5d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name>sys_hub_flow_variable_27ad8316c3e0301054ffca568640ddff</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 10:48:16</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=6f7e4124-f698-4daf-b1a9-284b52a90e3d</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>approver</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Approver</label>
+        <mandatory>false</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Create an Okta User from the Service Catalog">a612079ac320301054ffca568640ddca</model>
+        <model_id>a612079ac320301054ffca568640ddca</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_variable_a612079ac320301054ffca568640ddca</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="sys_user">sys_user</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 10:48:15</sys_created_on>
+        <sys_id>57ad8316c3e0301054ffca568640dde6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Approver</sys_name>
+        <sys_package display_value="Flow Templates for Application Access" source="sn_ft_app_access">e383fe12c320301054ffca568640dd5d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name>sys_hub_flow_variable_57ad8316c3e0301054ffca568640dde6</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 10:48:15</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=91595119-132f-4db8-8f0a-677b4caee855</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>assign_to_person_if_automation_fails</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Assign to person if automation fails</label>
+        <mandatory>false</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Create an Okta User from the Service Catalog">a612079ac320301054ffca568640ddca</model>
+        <model_id>a612079ac320301054ffca568640ddca</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_variable_a612079ac320301054ffca568640ddca</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="sys_user">sys_user</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 10:48:16</sys_created_on>
+        <sys_id>97ad8316c3e0301054ffca568640ddf0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Assign to person if automation fails</sys_name>
+        <sys_package display_value="Flow Templates for Application Access" source="sn_ft_app_access">e383fe12c320301054ffca568640dd5d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name>sys_hub_flow_variable_97ad8316c3e0301054ffca568640ddf0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 10:48:16</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=d052871f-108e-4ddd-9eb9-409ae60a75c3</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>primary_email</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Primary email</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Create an Okta User from the Service Catalog">a612079ac320301054ffca568640ddca</model>
+        <model_id>a612079ac320301054ffca568640ddca</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_variable_a612079ac320301054ffca568640ddca</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 10:48:16</sys_created_on>
+        <sys_id>97ad8316c3e0301054ffca568640ddfa</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Primary email</sys_name>
+        <sys_package display_value="Flow Templates for Application Access" source="sn_ft_app_access">e383fe12c320301054ffca568640dd5d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name>sys_hub_flow_variable_97ad8316c3e0301054ffca568640ddfa</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 10:48:16</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=5ff6d72d-5b0e-405d-84f7-18a06c68acd3</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice>3</choice>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value>false</default_value>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>activate_user</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">boolean</internal_type>
+        <label>Activate user</label>
+        <mandatory>false</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Create an Okta User from the Service Catalog">a612079ac320301054ffca568640ddca</model>
+        <model_id>a612079ac320301054ffca568640ddca</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_variable_a612079ac320301054ffca568640ddca</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 10:48:15</sys_created_on>
+        <sys_id>d3ad8316c3e0301054ffca568640ddde</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Activate user</sys_name>
+        <sys_package display_value="Flow Templates for Application Access" source="sn_ft_app_access">e383fe12c320301054ffca568640dd5d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name>sys_hub_flow_variable_d3ad8316c3e0301054ffca568640ddde</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 10:48:15</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=4e980926-8c26-4e34-a7cb-d133388fb5fd</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>assign_to_group_if_automation_fails</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Assign to group if automation fails</label>
+        <mandatory>false</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Create an Okta User from the Service Catalog">a612079ac320301054ffca568640ddca</model>
+        <model_id>a612079ac320301054ffca568640ddca</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_variable_a612079ac320301054ffca568640ddca</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="sys_user_group">sys_user_group</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 10:48:15</sys_created_on>
+        <sys_id>d7ad8316c3e0301054ffca568640ddcb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Assign to group if automation fails</sys_name>
+        <sys_package display_value="Flow Templates for Application Access" source="sn_ft_app_access">e383fe12c320301054ffca568640dd5d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name>sys_hub_flow_variable_d7ad8316c3e0301054ffca568640ddcb</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 10:48:15</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_a612079ac320301054ffca568640ddca^sys_idNOT IN9fad8316c3e0301054ffca568640ddbc,d7ad8316c3e0301054ffca568640ddc6"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>request_item</element>
+        <help/>
+        <hint/>
+        <label>Request Item</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_a612079ac320301054ffca568640ddca</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 10:48:15</sys_created_on>
+        <sys_id>9fad8316c3e0301054ffca568640ddbc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Flow Templates for Application Access" source="sn_ft_app_access">e383fe12c320301054ffca568640dd5d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 10:48:15</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_a612079ac320301054ffca568640ddca</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 10:48:15</sys_created_on>
+        <sys_id>d7ad8316c3e0301054ffca568640ddc6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Flow Templates for Application Access" source="sn_ft_app_access">e383fe12c320301054ffca568640dd5d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 10:48:15</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+</record_update>

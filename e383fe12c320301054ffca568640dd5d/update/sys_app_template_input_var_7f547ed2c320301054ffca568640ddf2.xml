@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_app_template_input_var">
+    <sys_app_template_input_var action="INSERT_OR_UPDATE">
+        <default/>
+        <description/>
+        <flow_input_variable display_value="flow_run_as">2c64bed2c320301054ffca568640dd04</flow_input_variable>
+        <mandatory>false</mandatory>
+        <name>flow_run_as</name>
+        <sys_class_name>sys_app_template_input_var</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 08:57:44</sys_created_on>
+        <sys_id>7f547ed2c320301054ffca568640ddf2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>flow_run_as</sys_name>
+        <sys_package display_value="Flow Templates for Application Access" source="sn_ft_app_access">e383fe12c320301054ffca568640dd5d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name>sys_app_template_input_var_7f547ed2c320301054ffca568640ddf2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 08:57:44</sys_updated_on>
+        <template display_value="Create an SSO User from the Service Catalog">82d3b6d2c320301054ffca568640dd66</template>
+        <type>string</type>
+    </sys_app_template_input_var>
+</record_update>

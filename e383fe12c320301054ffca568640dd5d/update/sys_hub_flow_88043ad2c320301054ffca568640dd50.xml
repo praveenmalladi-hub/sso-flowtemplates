@@ -1,0 +1,2751 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category display_value="Template">ee4ddd62b7301010835d6f54ce11a90f</category>
+        <compiler_build>latest</compiler_build>
+        <copied_from>b6289a925b11101001fb0c370581c7ac</copied_from>
+        <copied_from_name>Object Template Subflow</copied_from_name>
+        <description>The base subflow for Object Templates (sys_app_template where create_app is set to false).</description>
+        <internal_name>object_template__create_an_sso_user_from_the_service_catalog</internal_name>
+        <label_cache>[{"name":"subflow.activate_user","label":"Input➛activate_user","reference":"","reference_display":"","type":"boolean","base_type":"boolean","column_name":"","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"06daaa49-9a90-4616-8fc4-6f19cbb81c13","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.okta_connection","label":"Input➛okta_connection","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"4faeca3b-045d-4e5e-8ac4-5dfb14562425","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.catalog_item","label":"Input➛catalog_item","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"458107ce-2269-46eb-bad2-bd7efcbcd29f","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.flow_run_with_roles","label":"Input➛flow_run_with_roles","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"46d98e52-c015-4ada-8988-2725420425a6","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.flow_run_as","label":"Input➛flow_run_as","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"6dc6d59b-e2b4-427f-ab92-59ca955b326f","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.flow_protection","label":"Input➛flow_protection","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"c9ebc0ea-dd92-4cca-8a98-4623c6a04a28","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.flow_description","label":"Input➛flow_description","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"0e53940c-373a-4fcf-94ac-8bf6fdd8976b","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.flow_scope_sys_id","label":"Input➛flow_scope_sys_id","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"342edbca-dbf9-48b7-a54a-d7ec9e926f6f","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.flow_name","label":"Input➛flow_name","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"25d051e9-1a48-4184-adb9-f3207bf05f6a","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"0de639ab-610a-4f91-84ad-db2b0e3fe587.scoped_app_output","label":"1➛scoped_app_output","reference_display":"scoped_app_output","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"897e5d0f-975d-4ae0-85bf-103e5ab12129"}}]</label_cache>
+        <latest_snapshot>963a17dac3e0301054ffca568640ddd6</latest_snapshot>
+        <master_snapshot>963a17dac3e0301054ffca568640ddd6</master_snapshot>
+        <name>Object Template - Create an SSO User from the Service Catalog</name>
+        <natlang/>
+        <outputs/>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 08:56:05</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>88043ad2c320301054ffca568640dd50</sys_id>
+        <sys_mod_count>28</sys_mod_count>
+        <sys_name>Object Template - Create an SSO User from the Service Catalog</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Flow Templates for Application Access" source="sn_ft_app_access">e383fe12c320301054ffca568640dd5d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name>sys_hub_flow_88043ad2c320301054ffca568640dd50</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-10 10:28:42</sys_updated_on>
+        <type>subflow</type>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=88043ad2c320301054ffca568640dd50"/>
+    <sys_variable_value action="delete_multiple" query="document_key=88043ad2c320301054ffca568640dd50"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=88043ad2c320301054ffca568640dd50^sys_idNOT IN40043ad2c320301054ffca568640dd53"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>88043ad2c320301054ffca568640dd50</id>
+        <name>Object Template - Create an SSO User from the Service Catalog</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 08:56:05</sys_created_on>
+        <sys_id>40043ad2c320301054ffca568640dd53</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 08:56:05</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_hub_flow_input action="delete_multiple" query="model=88043ad2c320301054ffca568640dd50^sys_idNOT IN0994b216c320301054ffca568640dd00,2c64bed2c320301054ffca568640dd04,49453a16c320301054ffca568640dd55,56547ed2c320301054ffca568640dd13,8144bad2c320301054ffca568640ddd6,9b557a16c320301054ffca568640dde7,9c056bd2c324301054ffca568640dd53,a344fad2c320301054ffca568640dd99,fc843216c320301054ffca568640ddb8,fe64fed2c320301054ffca568640dd09"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=3583fd33-1d53-424f-b361-b06be7bbafb9</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>spoke_selection</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>spoke_selection</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Object Template - Create an SSO User from the Service Catalog">88043ad2c320301054ffca568640dd50</model>
+        <model_id>88043ad2c320301054ffca568640dd50</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_88043ad2c320301054ffca568640dd50</name>
+        <next_element/>
+        <order>4</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 08:58:36</sys_created_on>
+        <sys_id>0994b216c320301054ffca568640dd00</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:00</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=6dc6d59b-e2b4-427f-ab92-59ca955b326f</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>flow_run_as</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>flow_run_as</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Object Template - Create an SSO User from the Service Catalog">88043ad2c320301054ffca568640dd50</model>
+        <model_id>88043ad2c320301054ffca568640dd50</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_88043ad2c320301054ffca568640dd50</name>
+        <next_element/>
+        <order>8</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 08:57:45</sys_created_on>
+        <sys_id>2c64bed2c320301054ffca568640dd04</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:00</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=4faeca3b-045d-4e5e-8ac4-5dfb14562425</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>okta_connection</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>okta_connection</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Object Template - Create an SSO User from the Service Catalog">88043ad2c320301054ffca568640dd50</model>
+        <model_id>88043ad2c320301054ffca568640dd50</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_88043ad2c320301054ffca568640dd50</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 09:01:36</sys_created_on>
+        <sys_id>49453a16c320301054ffca568640dd55</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 12:30:11</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=c9ebc0ea-dd92-4cca-8a98-4623c6a04a28</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>flow_protection</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>flow_protection</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Object Template - Create an SSO User from the Service Catalog">88043ad2c320301054ffca568640dd50</model>
+        <model_id>88043ad2c320301054ffca568640dd50</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_88043ad2c320301054ffca568640dd50</name>
+        <next_element/>
+        <order>7</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 08:57:35</sys_created_on>
+        <sys_id>56547ed2c320301054ffca568640dd13</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:00</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=0e53940c-373a-4fcf-94ac-8bf6fdd8976b</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>flow_description</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>flow_description</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Object Template - Create an SSO User from the Service Catalog">88043ad2c320301054ffca568640dd50</model>
+        <model_id>88043ad2c320301054ffca568640dd50</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_88043ad2c320301054ffca568640dd50</name>
+        <next_element/>
+        <order>6</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 08:57:14</sys_created_on>
+        <sys_id>8144bad2c320301054ffca568640ddd6</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:00</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=458107ce-2269-46eb-bad2-bd7efcbcd29f</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>catalog_item</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>catalog_item</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Object Template - Create an SSO User from the Service Catalog">88043ad2c320301054ffca568640dd50</model>
+        <model_id>88043ad2c320301054ffca568640dd50</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_88043ad2c320301054ffca568640dd50</name>
+        <next_element/>
+        <order>5</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 09:02:01</sys_created_on>
+        <sys_id>9b557a16c320301054ffca568640dde7</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:00</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=06daaa49-9a90-4616-8fc4-6f19cbb81c13</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value>false</default_value>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>activate_user</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">boolean</internal_type>
+        <label>activate_user</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Object Template - Create an SSO User from the Service Catalog">88043ad2c320301054ffca568640dd50</model>
+        <model_id>88043ad2c320301054ffca568640dd50</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_88043ad2c320301054ffca568640dd50</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 12:30:11</sys_created_on>
+        <sys_id>9c056bd2c324301054ffca568640dd53</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 12:30:11</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=25d051e9-1a48-4184-adb9-f3207bf05f6a</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>flow_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>flow_name</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Object Template - Create an SSO User from the Service Catalog">88043ad2c320301054ffca568640dd50</model>
+        <model_id>88043ad2c320301054ffca568640dd50</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_88043ad2c320301054ffca568640dd50</name>
+        <next_element/>
+        <order>9</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 08:57:25</sys_created_on>
+        <sys_id>a344fad2c320301054ffca568640dd99</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:00</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=342edbca-dbf9-48b7-a54a-d7ec9e926f6f</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>flow_scope_sys_id</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>flow_scope_sys_id</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Object Template - Create an SSO User from the Service Catalog">88043ad2c320301054ffca568640dd50</model>
+        <model_id>88043ad2c320301054ffca568640dd50</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_88043ad2c320301054ffca568640dd50</name>
+        <next_element/>
+        <order>3</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 08:58:19</sys_created_on>
+        <sys_id>fc843216c320301054ffca568640ddb8</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:00</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=46d98e52-c015-4ada-8988-2725420425a6</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>flow_run_with_roles</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>flow_run_with_roles</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Object Template - Create an SSO User from the Service Catalog">88043ad2c320301054ffca568640dd50</model>
+        <model_id>88043ad2c320301054ffca568640dd50</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_88043ad2c320301054ffca568640dd50</name>
+        <next_element/>
+        <order>10</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 08:57:54</sys_created_on>
+        <sys_id>fe64fed2c320301054ffca568640dd09</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:00</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_output action="delete_multiple" query="model=88043ad2c320301054ffca568640dd50^sys_idNOT IN3e26ba16c320301054ffca568640dd9f"/>
+    <sys_hub_flow_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=6bc2f59a-f600-4c81-ba4c-e136ee4483ae</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>output</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>output</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Object Template - Create an SSO User from the Service Catalog">88043ad2c320301054ffca568640dd50</model>
+        <model_id>88043ad2c320301054ffca568640dd50</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_output_88043ad2c320301054ffca568640dd50</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 09:05:32</sys_created_on>
+        <sys_id>3e26ba16c320301054ffca568640dd9f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:00</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_output>
+    <sys_hub_action_instance action="delete_multiple" query="flow=88043ad2c320301054ffca568640dd50^sys_idNOT IN593ad3dac3e0301054ffca568640ddcf,e93ad3dac3e0301054ffca568640ddd6"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Copy Flow using Template">c974eac6ff12101088e94ee9453bf11e</action_type>
+        <action_type_parent/>
+        <comment/>
+        <compiled_snapshot>c974eac6ff12101088e94ee9453bf11e</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Object Template - Create an SSO User from the Service Catalog">88043ad2c320301054ffca568640dd50</flow>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:01</sys_created_on>
+        <sys_id>593ad3dac3e0301054ffca568640ddcf</sys_id>
+        <sys_mod_count>36</sys_mod_count>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-10 10:28:42</sys_updated_on>
+        <ui_id>0de639ab-610a-4f91-84ad-db2b0e3fe587</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=593ad3dac3e0301054ffca568640ddcf"/>
+    <sys_element_mapping action="delete_multiple" query="id=593ad3dac3e0301054ffca568640ddcf"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>scoped_app_input</field>
+        <id>593ad3dac3e0301054ffca568640ddcf</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:01</sys_created_on>
+        <sys_id>113ad3dac3e0301054ffca568640ddd1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_c974eac6ff12101088e94ee9453bf11e</table>
+        <value>{"new_flow_name":"{{subflow.flow_name}}","flow_sys_id":"a612079ac320301054ffca568640ddca","scope_sys_id":"{{subflow.flow_scope_sys_id}}","description":"{{subflow.flow_description}}","protection":"{{subflow.flow_protection}}","run_as":"{{subflow.flow_run_as}}","run_with_roles":"{{subflow.flow_run_with_roles}}"}</value>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Update FT Create an Okta User from the Service Catalog">f6b97e96c320301054ffca568640dde7</action_type>
+        <action_type_parent/>
+        <comment/>
+        <compiled_snapshot>f6b97e96c320301054ffca568640dde7</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Object Template - Create an SSO User from the Service Catalog">88043ad2c320301054ffca568640dd50</flow>
+        <order>2</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:01</sys_created_on>
+        <sys_id>e93ad3dac3e0301054ffca568640ddd6</sys_id>
+        <sys_mod_count>36</sys_mod_count>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-10 10:28:42</sys_updated_on>
+        <ui_id>55f04662-6f61-4fca-a99b-10bcec2c4df4</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=e93ad3dac3e0301054ffca568640ddd6"/>
+    <sys_element_mapping action="delete_multiple" query="id=e93ad3dac3e0301054ffca568640ddd6"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>activate_user</field>
+        <id>e93ad3dac3e0301054ffca568640ddd6</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:01</sys_created_on>
+        <sys_id>6d3ad3dac3e0301054ffca568640ddd8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f6b97e96c320301054ffca568640dde7</table>
+        <value>{{subflow.activate_user}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>catalog_item</field>
+        <id>e93ad3dac3e0301054ffca568640ddd6</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:01</sys_created_on>
+        <sys_id>e53ad3dac3e0301054ffca568640ddd8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f6b97e96c320301054ffca568640dde7</table>
+        <value>{{subflow.catalog_item}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>flow_scope_sys_id</field>
+        <id>e93ad3dac3e0301054ffca568640ddd6</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:01</sys_created_on>
+        <sys_id>213ad3dac3e0301054ffca568640ddd9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f6b97e96c320301054ffca568640dde7</table>
+        <value>{{subflow.flow_scope_sys_id}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>new_flow_sys_id</field>
+        <id>e93ad3dac3e0301054ffca568640ddd6</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:01</sys_created_on>
+        <sys_id>e13ad3dac3e0301054ffca568640ddd9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f6b97e96c320301054ffca568640dde7</table>
+        <value>{{0de639ab-610a-4f91-84ad-db2b0e3fe587.scoped_app_output}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>okta_connection</field>
+        <id>e93ad3dac3e0301054ffca568640ddd6</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:01</sys_created_on>
+        <sys_id>a93ad3dac3e0301054ffca568640ddd8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:01</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f6b97e96c320301054ffca568640dde7</table>
+        <value>{{subflow.okta_connection}}</value>
+    </sys_element_mapping>
+    <sys_hub_flow_logic action="delete_multiple" query="flow=88043ad2c320301054ffca568640dd50^sys_idNOT INed3ad3dac3e0301054ffca568640ddd9"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">293ad3dac3e0301054ffca568640ddd9</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Object Template - Create an SSO User from the Service Catalog">88043ad2c320301054ffca568640dd50</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <logic_definition display_value="Assign Subflow Outputs">df4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>3</order>
+        <outputs_assigned>output</outputs_assigned>
+        <outputs_to_assign/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:01</sys_created_on>
+        <sys_id>ed3ad3dac3e0301054ffca568640ddd9</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-10 10:28:42</sys_updated_on>
+        <ui_id>e2952d6b-8d09-4905-8785-d36f0da6cab0</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=ed3ad3dac3e0301054ffca568640ddd9"/>
+    <sys_element_mapping action="delete_multiple" query="id=ed3ad3dac3e0301054ffca568640ddd9"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>output</field>
+        <id>ed3ad3dac3e0301054ffca568640ddd9</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:01</sys_created_on>
+        <sys_id>ad3ad3dac3e0301054ffca568640dddc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:01</sys_updated_on>
+        <table>var__m_sys_hub_flow_output_88043ad2c320301054ffca568640dd50</table>
+        <value>{{0de639ab-610a-4f91-84ad-db2b0e3fe587.scoped_app_output}}</value>
+    </sys_element_mapping>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_88043ad2c320301054ffca568640dd50^sys_idNOT IN1f557a16c320301054ffca568640ddeb,58056bd2c324301054ffca568640dd5d,70843216c320301054ffca568640ddbd,7264fed2c320301054ffca568640dd0e,8994b216c320301054ffca568640dd04,ac64bed2c320301054ffca568640dd08,af44fad2c320301054ffca568640dde7,c944bad2c320301054ffca568640dddb,c9453a16c320301054ffca568640dd59,d6547ed2c320301054ffca568640dd17"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>catalog_item</element>
+        <help/>
+        <hint/>
+        <label>catalog_item</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_88043ad2c320301054ffca568640dd50</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 09:02:01</sys_created_on>
+        <sys_id>1f557a16c320301054ffca568640ddeb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Flow Templates for Application Access" source="sn_ft_app_access">e383fe12c320301054ffca568640dd5d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 09:02:01</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>activate_user</element>
+        <help/>
+        <hint/>
+        <label>activate_user</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_88043ad2c320301054ffca568640dd50</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 12:30:11</sys_created_on>
+        <sys_id>58056bd2c324301054ffca568640dd5d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Flow Templates for Application Access" source="sn_ft_app_access">e383fe12c320301054ffca568640dd5d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 12:30:11</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>flow_scope_sys_id</element>
+        <help/>
+        <hint/>
+        <label>flow_scope_sys_id</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_88043ad2c320301054ffca568640dd50</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 08:58:19</sys_created_on>
+        <sys_id>70843216c320301054ffca568640ddbd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Flow Templates for Application Access" source="sn_ft_app_access">e383fe12c320301054ffca568640dd5d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 08:58:19</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>flow_run_with_roles</element>
+        <help/>
+        <hint/>
+        <label>flow_run_with_roles</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_88043ad2c320301054ffca568640dd50</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 08:57:54</sys_created_on>
+        <sys_id>7264fed2c320301054ffca568640dd0e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Flow Templates for Application Access" source="sn_ft_app_access">e383fe12c320301054ffca568640dd5d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 08:57:54</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>spoke_selection</element>
+        <help/>
+        <hint/>
+        <label>spoke_selection</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_88043ad2c320301054ffca568640dd50</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 08:58:36</sys_created_on>
+        <sys_id>8994b216c320301054ffca568640dd04</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Flow Templates for Application Access" source="sn_ft_app_access">e383fe12c320301054ffca568640dd5d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 08:58:36</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>flow_run_as</element>
+        <help/>
+        <hint/>
+        <label>flow_run_as</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_88043ad2c320301054ffca568640dd50</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 08:57:45</sys_created_on>
+        <sys_id>ac64bed2c320301054ffca568640dd08</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Flow Templates for Application Access" source="sn_ft_app_access">e383fe12c320301054ffca568640dd5d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 08:57:45</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>flow_name</element>
+        <help/>
+        <hint/>
+        <label>flow_name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_88043ad2c320301054ffca568640dd50</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 08:57:25</sys_created_on>
+        <sys_id>af44fad2c320301054ffca568640dde7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Flow Templates for Application Access" source="sn_ft_app_access">e383fe12c320301054ffca568640dd5d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 08:57:25</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>flow_description</element>
+        <help/>
+        <hint/>
+        <label>flow_description</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_88043ad2c320301054ffca568640dd50</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 08:57:14</sys_created_on>
+        <sys_id>c944bad2c320301054ffca568640dddb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Flow Templates for Application Access" source="sn_ft_app_access">e383fe12c320301054ffca568640dd5d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 08:57:14</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>okta_connection</element>
+        <help/>
+        <hint/>
+        <label>okta_connection</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_88043ad2c320301054ffca568640dd50</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 09:01:36</sys_created_on>
+        <sys_id>c9453a16c320301054ffca568640dd59</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Flow Templates for Application Access" source="sn_ft_app_access">e383fe12c320301054ffca568640dd5d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 09:01:36</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>flow_protection</element>
+        <help/>
+        <hint/>
+        <label>flow_protection</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_88043ad2c320301054ffca568640dd50</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 08:57:35</sys_created_on>
+        <sys_id>d6547ed2c320301054ffca568640dd17</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Flow Templates for Application Access" source="sn_ft_app_access">e383fe12c320301054ffca568640dd5d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 08:57:35</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_88043ad2c320301054ffca568640dd50^sys_idNOT INfa263256c320301054ffca568640dd79"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>output</element>
+        <help/>
+        <hint/>
+        <label>output</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_output_88043ad2c320301054ffca568640dd50</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 09:05:33</sys_created_on>
+        <sys_id>fa263256c320301054ffca568640dd79</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Flow Templates for Application Access" source="sn_ft_app_access">e383fe12c320301054ffca568640dd5d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 09:05:33</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=88043ad2c320301054ffca568640dd50^sys_idNOT IN573a97dac3e0301054ffca568640dd66"/>
+    <sys_flow_subflow_plan action="INSERT_OR_UPDATE">
+        <plan>com.snc.process_flow.engine.ProcessPlan@3d26f378</plan>
+        <plan_id display_value="Object Template - Create an SSO User from the Service Catalog">88043ad2c320301054ffca568640dd50</plan_id>
+        <snapshot>963a17dac3e0301054ffca568640ddd6</snapshot>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:08</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>573a97dac3e0301054ffca568640dd66</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-10 10:28:41</sys_updated_on>
+    </sys_flow_subflow_plan>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category display_value="Template">ee4ddd62b7301010835d6f54ce11a90f</category>
+        <copied_from/>
+        <copied_from_name/>
+        <description>The base subflow for Object Templates (sys_app_template where create_app is set to false).</description>
+        <internal_name>object_template__create_an_sso_user_from_the_service_catalog</internal_name>
+        <label_cache>[{"name":"subflow.activate_user","label":"Input➛activate_user","reference":"","reference_display":"","type":"boolean","base_type":"boolean","column_name":"","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"06daaa49-9a90-4616-8fc4-6f19cbb81c13","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.okta_connection","label":"Input➛okta_connection","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"4faeca3b-045d-4e5e-8ac4-5dfb14562425","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.catalog_item","label":"Input➛catalog_item","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"458107ce-2269-46eb-bad2-bd7efcbcd29f","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.flow_run_with_roles","label":"Input➛flow_run_with_roles","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"46d98e52-c015-4ada-8988-2725420425a6","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.flow_run_as","label":"Input➛flow_run_as","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"6dc6d59b-e2b4-427f-ab92-59ca955b326f","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.flow_protection","label":"Input➛flow_protection","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"c9ebc0ea-dd92-4cca-8a98-4623c6a04a28","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.flow_description","label":"Input➛flow_description","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"0e53940c-373a-4fcf-94ac-8bf6fdd8976b","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.flow_scope_sys_id","label":"Input➛flow_scope_sys_id","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"342edbca-dbf9-48b7-a54a-d7ec9e926f6f","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.flow_name","label":"Input➛flow_name","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"25d051e9-1a48-4184-adb9-f3207bf05f6a","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"0de639ab-610a-4f91-84ad-db2b0e3fe587.scoped_app_output","label":"1➛scoped_app_output","reference_display":"scoped_app_output","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"897e5d0f-975d-4ae0-85bf-103e5ab12129"}}]</label_cache>
+        <master>true</master>
+        <name>Object Template - Create an SSO User from the Service Catalog</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="Object Template - Create an SSO User from the Service Catalog">88043ad2c320301054ffca568640dd50</parent_flow>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:05</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>963a17dac3e0301054ffca568640ddd6</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-10 10:28:40</sys_updated_on>
+        <type>subflow</type>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=963a17dac3e0301054ffca568640ddd6"/>
+    <sys_variable_value action="delete_multiple" query="document_key=963a17dac3e0301054ffca568640ddd6"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=963a17dac3e0301054ffca568640ddd6^sys_idNOT INda3a17dac3e0301054ffca568640ddd7"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>963a17dac3e0301054ffca568640ddd6</id>
+        <name>Object Template - Create an SSO User from the Service Catalog</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:05</sys_created_on>
+        <sys_id>da3a17dac3e0301054ffca568640ddd7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:05</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_hub_flow_input action="delete_multiple" query="model=963a17dac3e0301054ffca568640ddd6^sys_idNOT IN323a57dac3e0301054ffca568640dda6,3e3a57dac3e0301054ffca568640ddb9,3e3a57dac3e0301054ffca568640ddd7,663a17dac3e0301054ffca568640ddd9,723a57dac3e0301054ffca568640ddec,be3a57dac3e0301054ffca568640ddaf,be3a57dac3e0301054ffca568640dde1,c594ef92c324301054ffca568640ddc2,fa3a57dac3e0301054ffca568640ddc3,fa3a57dac3e0301054ffca568640ddcd"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=342edbca-dbf9-48b7-a54a-d7ec9e926f6f</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>flow_scope_sys_id</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>flow_scope_sys_id</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Object Template - Create an SSO User from the Service Catalog">963a17dac3e0301054ffca568640ddd6</model>
+        <model_id>963a17dac3e0301054ffca568640ddd6</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_963a17dac3e0301054ffca568640ddd6</name>
+        <next_element/>
+        <order>3</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:06</sys_created_on>
+        <sys_id>323a57dac3e0301054ffca568640dda6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:06</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=458107ce-2269-46eb-bad2-bd7efcbcd29f</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>catalog_item</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>catalog_item</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Object Template - Create an SSO User from the Service Catalog">963a17dac3e0301054ffca568640ddd6</model>
+        <model_id>963a17dac3e0301054ffca568640ddd6</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_963a17dac3e0301054ffca568640ddd6</name>
+        <next_element/>
+        <order>5</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:06</sys_created_on>
+        <sys_id>3e3a57dac3e0301054ffca568640ddb9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:06</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=6dc6d59b-e2b4-427f-ab92-59ca955b326f</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>flow_run_as</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>flow_run_as</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Object Template - Create an SSO User from the Service Catalog">963a17dac3e0301054ffca568640ddd6</model>
+        <model_id>963a17dac3e0301054ffca568640ddd6</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_963a17dac3e0301054ffca568640ddd6</name>
+        <next_element/>
+        <order>8</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:07</sys_created_on>
+        <sys_id>3e3a57dac3e0301054ffca568640ddd7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:07</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=4faeca3b-045d-4e5e-8ac4-5dfb14562425</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>okta_connection</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>okta_connection</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Object Template - Create an SSO User from the Service Catalog">963a17dac3e0301054ffca568640ddd6</model>
+        <model_id>963a17dac3e0301054ffca568640ddd6</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_963a17dac3e0301054ffca568640ddd6</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:05</sys_created_on>
+        <sys_id>663a17dac3e0301054ffca568640ddd9</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 12:30:19</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=46d98e52-c015-4ada-8988-2725420425a6</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>flow_run_with_roles</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>flow_run_with_roles</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Object Template - Create an SSO User from the Service Catalog">963a17dac3e0301054ffca568640ddd6</model>
+        <model_id>963a17dac3e0301054ffca568640ddd6</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_963a17dac3e0301054ffca568640ddd6</name>
+        <next_element/>
+        <order>10</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:07</sys_created_on>
+        <sys_id>723a57dac3e0301054ffca568640ddec</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:07</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=3583fd33-1d53-424f-b361-b06be7bbafb9</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>spoke_selection</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>spoke_selection</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Object Template - Create an SSO User from the Service Catalog">963a17dac3e0301054ffca568640ddd6</model>
+        <model_id>963a17dac3e0301054ffca568640ddd6</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_963a17dac3e0301054ffca568640ddd6</name>
+        <next_element/>
+        <order>4</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:06</sys_created_on>
+        <sys_id>be3a57dac3e0301054ffca568640ddaf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:06</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=25d051e9-1a48-4184-adb9-f3207bf05f6a</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>flow_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>flow_name</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Object Template - Create an SSO User from the Service Catalog">963a17dac3e0301054ffca568640ddd6</model>
+        <model_id>963a17dac3e0301054ffca568640ddd6</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_963a17dac3e0301054ffca568640ddd6</name>
+        <next_element/>
+        <order>9</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:07</sys_created_on>
+        <sys_id>be3a57dac3e0301054ffca568640dde1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:07</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=06daaa49-9a90-4616-8fc4-6f19cbb81c13</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value>false</default_value>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>activate_user</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">boolean</internal_type>
+        <label>activate_user</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Object Template - Create an SSO User from the Service Catalog">963a17dac3e0301054ffca568640ddd6</model>
+        <model_id>963a17dac3e0301054ffca568640ddd6</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_963a17dac3e0301054ffca568640ddd6</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 12:28:19</sys_created_on>
+        <sys_id>c594ef92c324301054ffca568640ddc2</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 12:30:18</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=0e53940c-373a-4fcf-94ac-8bf6fdd8976b</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>flow_description</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>flow_description</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Object Template - Create an SSO User from the Service Catalog">963a17dac3e0301054ffca568640ddd6</model>
+        <model_id>963a17dac3e0301054ffca568640ddd6</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_963a17dac3e0301054ffca568640ddd6</name>
+        <next_element/>
+        <order>6</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:06</sys_created_on>
+        <sys_id>fa3a57dac3e0301054ffca568640ddc3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:06</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=c9ebc0ea-dd92-4cca-8a98-4623c6a04a28</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>flow_protection</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>flow_protection</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Object Template - Create an SSO User from the Service Catalog">963a17dac3e0301054ffca568640ddd6</model>
+        <model_id>963a17dac3e0301054ffca568640ddd6</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_963a17dac3e0301054ffca568640ddd6</name>
+        <next_element/>
+        <order>7</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:06</sys_created_on>
+        <sys_id>fa3a57dac3e0301054ffca568640ddcd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:06</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_output action="delete_multiple" query="model=963a17dac3e0301054ffca568640ddd6^sys_idNOT IN0f3a57dac3e0301054ffca568640ddfa"/>
+    <sys_hub_flow_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=6bc2f59a-f600-4c81-ba4c-e136ee4483ae</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>output</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>output</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Object Template - Create an SSO User from the Service Catalog">963a17dac3e0301054ffca568640ddd6</model>
+        <model_id>963a17dac3e0301054ffca568640ddd6</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_output_963a17dac3e0301054ffca568640ddd6</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:07</sys_created_on>
+        <sys_id>0f3a57dac3e0301054ffca568640ddfa</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:07</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_output>
+    <sys_hub_action_instance action="delete_multiple" query="flow=963a17dac3e0301054ffca568640ddd6^sys_idNOT IN4f3a97dac3e0301054ffca568640dd17,833a97dac3e0301054ffca568640dd0f"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Update FT Create an Okta User from the Service Catalog">f6b97e96c320301054ffca568640dde7</action_type>
+        <action_type_parent display_value="Update FT Create an Okta User from the Service Catalog">9827f656c320301054ffca568640ddcd</action_type_parent>
+        <comment/>
+        <compiled_snapshot>f6b97e96c320301054ffca568640dde7</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Object Template - Create an SSO User from the Service Catalog">963a17dac3e0301054ffca568640ddd6</flow>
+        <order>2</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:08</sys_created_on>
+        <sys_id>4f3a97dac3e0301054ffca568640dd17</sys_id>
+        <sys_mod_count>24</sys_mod_count>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-10 10:28:39</sys_updated_on>
+        <ui_id>55f04662-6f61-4fca-a99b-10bcec2c4df4</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=4f3a97dac3e0301054ffca568640dd17"/>
+    <sys_element_mapping action="delete_multiple" query="id=4f3a97dac3e0301054ffca568640dd17"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>activate_user</field>
+        <id>4f3a97dac3e0301054ffca568640dd17</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:08</sys_created_on>
+        <sys_id>0b3a97dac3e0301054ffca568640dd19</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:08</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f6b97e96c320301054ffca568640dde7</table>
+        <value>{{subflow.activate_user}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>catalog_item</field>
+        <id>4f3a97dac3e0301054ffca568640dd17</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:08</sys_created_on>
+        <sys_id>833a97dac3e0301054ffca568640dd19</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:08</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f6b97e96c320301054ffca568640dde7</table>
+        <value>{{subflow.catalog_item}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>flow_scope_sys_id</field>
+        <id>4f3a97dac3e0301054ffca568640dd17</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:08</sys_created_on>
+        <sys_id>cb3a97dac3e0301054ffca568640dd19</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:08</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f6b97e96c320301054ffca568640dde7</table>
+        <value>{{subflow.flow_scope_sys_id}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>new_flow_sys_id</field>
+        <id>4f3a97dac3e0301054ffca568640dd17</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:08</sys_created_on>
+        <sys_id>8f3a97dac3e0301054ffca568640dd19</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:08</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f6b97e96c320301054ffca568640dde7</table>
+        <value>{{0de639ab-610a-4f91-84ad-db2b0e3fe587.scoped_app_output}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>okta_connection</field>
+        <id>4f3a97dac3e0301054ffca568640dd17</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:08</sys_created_on>
+        <sys_id>473a97dac3e0301054ffca568640dd19</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:08</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f6b97e96c320301054ffca568640dde7</table>
+        <value>{{subflow.okta_connection}}</value>
+    </sys_element_mapping>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Copy Flow using Template">c974eac6ff12101088e94ee9453bf11e</action_type>
+        <action_type_parent display_value="Copy Flow using Template">b7c3e2c6ff12101088e94ee9453bf148</action_type_parent>
+        <comment/>
+        <compiled_snapshot>c974eac6ff12101088e94ee9453bf11e</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Object Template - Create an SSO User from the Service Catalog">963a17dac3e0301054ffca568640ddd6</flow>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:07</sys_created_on>
+        <sys_id>833a97dac3e0301054ffca568640dd0f</sys_id>
+        <sys_mod_count>24</sys_mod_count>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-10 10:28:39</sys_updated_on>
+        <ui_id>0de639ab-610a-4f91-84ad-db2b0e3fe587</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=833a97dac3e0301054ffca568640dd0f"/>
+    <sys_element_mapping action="delete_multiple" query="id=833a97dac3e0301054ffca568640dd0f"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>scoped_app_input</field>
+        <id>833a97dac3e0301054ffca568640dd0f</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:07</sys_created_on>
+        <sys_id>cf3a97dac3e0301054ffca568640dd0f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:07</sys_updated_on>
+        <table>var__m_sys_hub_action_input_c974eac6ff12101088e94ee9453bf11e</table>
+        <value>{"new_flow_name":"{{subflow.flow_name}}","flow_sys_id":"a612079ac320301054ffca568640ddca","scope_sys_id":"{{subflow.flow_scope_sys_id}}","description":"{{subflow.flow_description}}","protection":"{{subflow.flow_protection}}","run_as":"{{subflow.flow_run_as}}","run_with_roles":"{{subflow.flow_run_with_roles}}"}</value>
+    </sys_element_mapping>
+    <sys_hub_flow_logic action="delete_multiple" query="flow=963a17dac3e0301054ffca568640ddd6^sys_idNOT IN8b3a97dac3e0301054ffca568640dd06"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">293ad3dac3e0301054ffca568640ddd9</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Object Template - Create an SSO User from the Service Catalog">963a17dac3e0301054ffca568640ddd6</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <logic_definition display_value="Assign Subflow Outputs">df4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>3</order>
+        <outputs_assigned>output</outputs_assigned>
+        <outputs_to_assign/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:07</sys_created_on>
+        <sys_id>8b3a97dac3e0301054ffca568640dd06</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-10 10:28:40</sys_updated_on>
+        <ui_id>e2952d6b-8d09-4905-8785-d36f0da6cab0</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=8b3a97dac3e0301054ffca568640dd06"/>
+    <sys_element_mapping action="delete_multiple" query="id=8b3a97dac3e0301054ffca568640dd06"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>output</field>
+        <id>8b3a97dac3e0301054ffca568640dd06</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:07</sys_created_on>
+        <sys_id>033a97dac3e0301054ffca568640dd0a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:07</sys_updated_on>
+        <table>var__m_sys_hub_flow_output_963a17dac3e0301054ffca568640ddd6</table>
+        <value>{{0de639ab-610a-4f91-84ad-db2b0e3fe587.scoped_app_output}}</value>
+    </sys_element_mapping>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_963a17dac3e0301054ffca568640ddd6^sys_idNOT IN0b3a57dac3e0301054ffca568640ddf2,363a57dac3e0301054ffca568640dde8,4594ef92c324301054ffca568640ddd0,723a57dac3e0301054ffca568640ddac,723a57dac3e0301054ffca568640ddde,a23a57dac3e0301054ffca568640dd98,be3a57dac3e0301054ffca568640ddbf,be3a57dac3e0301054ffca568640ddc9,fe3a57dac3e0301054ffca568640ddb5,fe3a57dac3e0301054ffca568640ddd3"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>flow_run_with_roles</element>
+        <help/>
+        <hint/>
+        <label>flow_run_with_roles</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_963a17dac3e0301054ffca568640ddd6</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:07</sys_created_on>
+        <sys_id>0b3a57dac3e0301054ffca568640ddf2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Flow Templates for Application Access" source="sn_ft_app_access">e383fe12c320301054ffca568640dd5d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:07</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>flow_name</element>
+        <help/>
+        <hint/>
+        <label>flow_name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_963a17dac3e0301054ffca568640ddd6</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:07</sys_created_on>
+        <sys_id>363a57dac3e0301054ffca568640dde8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Flow Templates for Application Access" source="sn_ft_app_access">e383fe12c320301054ffca568640dd5d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:07</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>activate_user</element>
+        <help/>
+        <hint/>
+        <label>activate_user</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_963a17dac3e0301054ffca568640ddd6</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 12:28:19</sys_created_on>
+        <sys_id>4594ef92c324301054ffca568640ddd0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Flow Templates for Application Access" source="sn_ft_app_access">e383fe12c320301054ffca568640dd5d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 12:28:19</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>flow_scope_sys_id</element>
+        <help/>
+        <hint/>
+        <label>flow_scope_sys_id</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_963a17dac3e0301054ffca568640ddd6</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:06</sys_created_on>
+        <sys_id>723a57dac3e0301054ffca568640ddac</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Flow Templates for Application Access" source="sn_ft_app_access">e383fe12c320301054ffca568640dd5d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:06</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>flow_run_as</element>
+        <help/>
+        <hint/>
+        <label>flow_run_as</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_963a17dac3e0301054ffca568640ddd6</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:07</sys_created_on>
+        <sys_id>723a57dac3e0301054ffca568640ddde</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Flow Templates for Application Access" source="sn_ft_app_access">e383fe12c320301054ffca568640dd5d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:07</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>okta_connection</element>
+        <help/>
+        <hint/>
+        <label>okta_connection</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_963a17dac3e0301054ffca568640ddd6</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:06</sys_created_on>
+        <sys_id>a23a57dac3e0301054ffca568640dd98</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Flow Templates for Application Access" source="sn_ft_app_access">e383fe12c320301054ffca568640dd5d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:06</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>catalog_item</element>
+        <help/>
+        <hint/>
+        <label>catalog_item</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_963a17dac3e0301054ffca568640ddd6</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:06</sys_created_on>
+        <sys_id>be3a57dac3e0301054ffca568640ddbf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Flow Templates for Application Access" source="sn_ft_app_access">e383fe12c320301054ffca568640dd5d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:06</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>flow_description</element>
+        <help/>
+        <hint/>
+        <label>flow_description</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_963a17dac3e0301054ffca568640ddd6</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:06</sys_created_on>
+        <sys_id>be3a57dac3e0301054ffca568640ddc9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Flow Templates for Application Access" source="sn_ft_app_access">e383fe12c320301054ffca568640dd5d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:06</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>spoke_selection</element>
+        <help/>
+        <hint/>
+        <label>spoke_selection</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_963a17dac3e0301054ffca568640ddd6</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:06</sys_created_on>
+        <sys_id>fe3a57dac3e0301054ffca568640ddb5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Flow Templates for Application Access" source="sn_ft_app_access">e383fe12c320301054ffca568640dd5d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:06</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>flow_protection</element>
+        <help/>
+        <hint/>
+        <label>flow_protection</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_963a17dac3e0301054ffca568640ddd6</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:06</sys_created_on>
+        <sys_id>fe3a57dac3e0301054ffca568640ddd3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Flow Templates for Application Access" source="sn_ft_app_access">e383fe12c320301054ffca568640dd5d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:06</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_963a17dac3e0301054ffca568640ddd6^sys_idNOT IN473a97dac3e0301054ffca568640dd01"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>output</element>
+        <help/>
+        <hint/>
+        <label>output</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_output_963a17dac3e0301054ffca568640ddd6</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-07 11:43:07</sys_created_on>
+        <sys_id>473a97dac3e0301054ffca568640dd01</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Flow Templates for Application Access" source="sn_ft_app_access">e383fe12c320301054ffca568640dd5d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flow Templates for Application Access">e383fe12c320301054ffca568640dd5d</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-07 11:43:07</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+</record_update>
